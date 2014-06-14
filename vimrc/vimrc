@@ -1,0 +1,140 @@
+scriptencoding utf-8
+
+set nocompatible
+set bs=2                " Allow backspacing over everything in insert mode
+set ai                  " Always set auto-indenting on
+set history=500          " keep 50 lines of command history
+set ruler               " Show the cursor position all the time
+
+set softtabstop=2
+set expandtab
+set tabstop=2           " Control the number of space characters
+set shiftwidth=2        " Change the number of space characters
+
+set incsearch           " To move the search while typing
+set laststatus=2
+set cmdheight=1
+set backspace=2
+syn on
+set rnu                 " Relative lines numbers
+set number              " Current line number
+set mouse=a
+
+set ignorecase
+set smartcase
+set hlsearch
+
+
+set undofile
+
+" enable folding
+set foldenable
+
+" Color the 80th column
+" set colorcolumn=80
+
+
+" Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+ " let Vundle manage Vundle
+ " required!
+Bundle 'gmarik/vundle'
+
+
+ " My Bundles here:
+ "
+ " original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'tomasr/molokai'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'kien/ctrlp.vim'
+" Bundle 'wellle/tmux-complete.vim'
+
+" Bundle 'thinca/vim-localrc'
+Bundle 'mileszs/ack.vim'
+
+Bundle 'vim-scripts/ingo-library'
+Bundle 'vim-scripts/JumpToLastOccurrence'
+
+Bundle 'chrisbra/csv.vim'
+
+Bundle 'Valloric/YouCompleteMe'
+
+Bundle 'majutsushi/tagbar'
+" Bundle 'nelstrom/vim-visual-star-search'
+
+" Bundle 'chrisghost/play2vim'
+" Bundle 'scrooloose/syntastic'
+
+" Bundle 'sjbach/lusty'
+" Bundle 'vim-scripts/git-time-lapse'
+" Bundle 'pangloss/vim-javascript'
+" Bundle 'initrc/eclim-vundle'
+" Bundle 'file:///Users/chrissou/.vim/eclim'
+
+" Bundle 'itchyny/calendar.vim'
+
+Bundle 'scrooloose/nerdcommenter'
+
+" Colors
+Bundle 'altercation/vim-colors-solarized'
+
+
+Bundle "vimwiki/vimwiki"
+
+colorscheme molokai
+
+filetype plugin indent on     " required!
+
+autocmd BufNewFile,BufRead /Users/chrissou/workspace/**.java set expandtab|set tabstop=4|set shiftwidth=4
+
+" For Calendar
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+
+" For LustyExplorer
+set hidden
+
+let mapleader = ","
+
+" Key mappings
+nmap gh <Plug>GitGutterNextHunk
+nmap gH <Plug>GitGutterPrevHunk
+" nmap gd :JavaSearchContext<cr>
+" nmap gv :JavaDocPreview<cr>
+
+" Adds a maping to open current file's working directory in NERDTree
+map <leader>r :NERDTreeFind<cr>
+
+" Adds mapping to toggle tagbar
+map <leader>l :TagbarToggle<cr>
+
+
+" CtrlP config
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v(target|bin)$',
+  \ 'file': '\v\.class$',
+  \ }
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:50,results:50'
+let g:ctrlp_working_path_mode = ''
+
+set list
+set listchars=nbsp:¤,tab:->,trail:·,extends:>,precedes:<
+",eol:¶
+"autocmd BufWrite * silent! %s/[\r \t]\+$//
+"
+"
+" Eclim related config
+let g:EclimCompletionMethod = 'omnifunc'
+
+map <C-G> :JavaSearchContext<cr>
+map <leader>pl :ProjectList<cr>
+map <leader>pc :ProjectClose 
+map <leader>po :ProjectOpen 
+map <leader>jc :JavaCorrect<cr>
+map <leader>jo :JavaImportOrganize<cr>
+map <leader>ne :lnext<cr>
+
