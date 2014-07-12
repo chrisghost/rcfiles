@@ -45,6 +45,7 @@ set matchpairs+=<:>
 set showcmd
 
 set cursorline
+set cursorcolumn
 
 " Vundle
 set rtp+=~/.vim/bundle/vundle/
