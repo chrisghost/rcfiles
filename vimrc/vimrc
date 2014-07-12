@@ -4,7 +4,7 @@ set nocompatible
 set bs=2                " Allow backspacing over everything in insert mode
 set ai                  " Always set auto-indenting on
 set history=500          " keep 50 lines of command history
-set ruler               " Show the cursor position all the time
+set ruler
 
 set softtabstop=2
 set expandtab
@@ -24,8 +24,15 @@ set ignorecase
 set smartcase
 set hlsearch
 
+" Only one space when joining lines
+set nojoinspaces
 
 set undofile
+
+" Wild menu (completion)
+set wildmenu
+set wildmode=full
+"set wildmode=longest,list
 
 " enable folding
 set foldenable
@@ -33,6 +40,11 @@ set foldenable
 " Color the 80th column
 " set colorcolumn=80
 
+set matchpairs+=<:>
+
+set showcmd
+
+set cursorline
 
 " Vundle
 set rtp+=~/.vim/bundle/vundle/
@@ -137,4 +149,10 @@ map <leader>po :ProjectOpen
 map <leader>jc :JavaCorrect<cr>
 map <leader>jo :JavaImportOrganize<cr>
 map <leader>ne :lnext<cr>
+
+
+map <C-j> :bnext<cr>
+map <C-k> :bprevious<cr>
+
+map Y y$
 
