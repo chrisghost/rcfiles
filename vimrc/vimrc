@@ -96,6 +96,9 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'altercation/vim-colors-solarized'
 
 Bundle 'terryma/vim-smooth-scroll'
+
+Bundle 'nathanaelkane/vim-indent-guides'
+
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
