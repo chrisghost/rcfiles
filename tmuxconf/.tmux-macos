@@ -1,0 +1,18 @@
+#Copy options
+set-option -g default-command "reattach-to-user-namespace -l bash"
+
+unbind [
+bind ( copy-mode
+unbind p
+bind p paste-buffer
+
+
+bind -t vi-copy v begin-selection
+#bind -t vi-copy y copy-selection
+
+bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+
+bind -t vi-copy Escape cancel
+#bind y run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
+
+
