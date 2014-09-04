@@ -47,58 +47,168 @@ set showcmd
 set cursorline
 set cursorcolumn
 
-" Vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
- " let Vundle manage Vundle
- " required!
-Bundle 'gmarik/vundle'
+
+"""   " Vundle
+"""   set rtp+=~/.vim/bundle/vundle/
+"""   call vundle#rc()
+"""    " let Vundle manage Vundle
+"""    " required!
+"""   Bundle 'gmarik/vundle'
+"""   
+"""   
+"""    " My Bundles here:
+"""    "
+"""    " original repos on github
+"""   Bundle 'tpope/vim-fugitive'
+"""   Bundle 'airblade/vim-gitgutter'
+"""   Bundle 'scrooloose/nerdtree'
+"""   Bundle 'tomasr/molokai'
+"""   Bundle 'derekwyatt/vim-scala'
+"""   Bundle 'kien/ctrlp.vim'
+"""   " Bundle 'wellle/tmux-complete.vim'
+"""   
+"""   " Bundle 'thinca/vim-localrc'
+"""   Bundle 'mileszs/ack.vim'
+"""   
+"""   Bundle 'vim-scripts/ingo-library'
+"""   Bundle 'vim-scripts/JumpToLastOccurrence'
+"""   
+"""   " Bundle 'chrisbra/csv.vim'
+"""   
+"""   Bundle 'Valloric/YouCompleteMe'
+"""   
+"""   Bundle 'majutsushi/tagbar'
+"""   " Bundle 'nelstrom/vim-visual-star-search'
+"""   
+"""   " Bundle 'chrisghost/play2vim'
+"""   " Bundle 'scrooloose/syntastic'
+"""   
+"""   " Bundle 'sjbach/lusty'
+"""   " Bundle 'vim-scripts/git-time-lapse'
+"""   " Bundle 'pangloss/vim-javascript'
+"""   " Bundle 'initrc/eclim-vundle'
+"""   " Bundle 'file:///Users/chrissou/.vim/eclim'
+"""   
+"""   " Bundle 'itchyny/calendar.vim'
+"""   
+"""   Bundle 'scrooloose/nerdcommenter'
+"""   
+"""   " Colors
+"""   Bundle 'altercation/vim-colors-solarized'
+"""   
+"""   Bundle 'nathanaelkane/vim-indent-guides'
+"""   
+"""   Bundle 'groenewege/vim-less'
+"""   
+"""   " Bundle "vimwiki/vimwiki"
+"""   
+"""   Bundle 'erthalion/vim-reddit'
 
 
- " My Bundles here:
- "
- " original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tomasr/molokai'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'kien/ctrlp.vim'
-" Bundle 'wellle/tmux-complete.vim'
-
-" Bundle 'thinca/vim-localrc'
-Bundle 'mileszs/ack.vim'
-
-Bundle 'vim-scripts/ingo-library'
-Bundle 'vim-scripts/JumpToLastOccurrence'
-
-Bundle 'chrisbra/csv.vim'
-
-Bundle 'Valloric/YouCompleteMe'
-
-Bundle 'majutsushi/tagbar'
-" Bundle 'nelstrom/vim-visual-star-search'
-
-" Bundle 'chrisghost/play2vim'
-" Bundle 'scrooloose/syntastic'
-
-" Bundle 'sjbach/lusty'
-" Bundle 'vim-scripts/git-time-lapse'
-" Bundle 'pangloss/vim-javascript'
-" Bundle 'initrc/eclim-vundle'
-" Bundle 'file:///Users/chrissou/.vim/eclim'
-
-" Bundle 'itchyny/calendar.vim'
-
-Bundle 'scrooloose/nerdcommenter'
-
-" Colors
-Bundle 'altercation/vim-colors-solarized'
-
-Bundle 'nathanaelkane/vim-indent-guides'
 
 
-" Bundle "vimwiki/vimwiki"
+"NeoBundle Scripts-----------------------------
+if has('vim_starting')
+  set nocompatible               " Be iMproved
+
+  " Required:
+  set runtimepath+=/Users/chrissou/.vim/bundle/neobundle.vim/
+endif
+
+" Required:
+call neobundle#begin(expand('/Users/chrissou/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'flazz/vim-colorschemes'
+
+" You can specify revision/branch/tag.
+"NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+
+
+NeoBundle 'tomasr/molokai'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'derekwyatt/vim-scala'
+
+NeoBundle 'shougo/unite.vim'
+
+NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'gre/play2vim'
+NeoBundle 'vim-scripts/JumpToLastOccurrence'
+NeoBundle 'groenewege/vim-less'
+
+
+NeoBundle 'kien/rainbow_parentheses.vim'
+NeoBundle 'guns/vim-clojure-static'
+
+NeoBundleLazy 'farseer90718/unite-workflow', {
+            \ 'depends' : [
+            \   'mattn/webapi-vim',
+            \   'mattn/gist-vim']
+            \ }
+
+let g:unite#workflow#reddit#front = 'http://www.reddit.com/.json?feed=87d05620f133f773c9181edbf4e492a392dd0398&user=chrissou'
+
+" Rainbow parenthesis
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+
+
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+map <leader>pr :RainbowParenthesesToggle<cr>
+
+" Required:
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+"End NeoBundle Scripts-------------------------
+
+
+
+call unite#custom#profile( 'source/reddit, source/wikipedia', 'context', { 'keep_focus' : 1, 'no_quit' : 1 })
+
+
+
+
+
+
+
+
 
 colorscheme molokai
 
@@ -111,7 +221,7 @@ let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
 " For LustyExplorer
-set hidden
+"set hidden
 
 let mapleader = ","
 
@@ -158,4 +268,6 @@ map <C-j> :bnext<cr>
 map <C-k> :bprevious<cr>
 
 map Y y$
+
+nnoremap ; :
 
