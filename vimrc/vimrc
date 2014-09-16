@@ -150,6 +150,9 @@ NeoBundle 'groenewege/vim-less'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'guns/vim-clojure-static'
 
+NeoBundle 'AndrewRadev/undoquit.vim'
+NeoBundle 'wesQ3/vim-windowswap'
+
 NeoBundleLazy 'farseer90718/unite-workflow', {
             \ 'depends' : [
             \   'mattn/webapi-vim',
@@ -169,13 +172,12 @@ let g:rbpt_colorpairs = [
     \ ['darkmagenta', 'DarkOrchid3'],
     \ ['brown',       'firebrick3'],
     \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
     \ ['darkmagenta', 'DarkOrchid3'],
     \ ['Darkblue',    'firebrick3'],
     \ ['darkgreen',   'RoyalBlue3'],
     \ ['darkcyan',    'SeaGreen3'],
     \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
+    \ ['red',         'firebrick3']
     \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
@@ -185,7 +187,7 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-map <leader>pr :RainbowParenthesesToggle<cr>
+map <leader>pt :RainbowParenthesesToggle<cr>
 
 " Required:
 call neobundle#end()
