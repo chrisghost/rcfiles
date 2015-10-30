@@ -1,8 +1,8 @@
 #Copy options
 set-option -g default-command "reattach-to-user-namespace -l bash"
 
-unbind [
-bind ( copy-mode
+#unbind [
+#bind ( copy-mode
 unbind p
 bind p paste-buffer
 
