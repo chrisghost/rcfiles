@@ -1,8 +1,8 @@
 #Copy options
-unbind [
-bind ( copy-mode
-unbind p
-bind p paste-buffer
+#unbind [
+#bind ( copy-mode
+#unbind p
+#bind p paste-buffer
 
 
 bind -t vi-copy v begin-selection

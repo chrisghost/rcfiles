@@ -65,6 +65,11 @@ Plug 'derekwyatt/vim-scala'
 Plug 'airblade/vim-gitgutter'
 Plug 'flazz/vim-colorschemes'
 Plug 'kien/ctrlp.vim'
+Plug 'gre/play2vim'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/vim-peekaboo'
+Plug 'bling/vim-airline'
+
 " call unite#custom#profile( 'source/reddit, source/wikipedia', 'context', { 'keep_focus' : 1, 'no_quit' : 1 })
 
 
